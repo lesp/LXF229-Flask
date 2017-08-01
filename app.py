@@ -11,16 +11,11 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/on/')
+@app.route('/toggle/')
 def on():
     led.toggle()
     return render_template('index.html')
-
-@app.route('/off/')
-def off():
-    led.off()
-    return render_template('index.html')
-         
+     
 @app.route('/motor-forwards/')
 def motorforwards():
     motor.forward()
